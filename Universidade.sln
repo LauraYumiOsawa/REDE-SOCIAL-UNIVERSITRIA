@@ -16,6 +16,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universidade.Infra", "Unive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIUni", "APIUni\APIUni.csproj", "{3720E401-10A1-462C-833D-283E69B78777}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Universidade.Application", "Universidade.Application\Universidade.Application.csproj", "{609118D0-E114-4BA7-BCE0-688C8E71EBCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,7 @@ Global
 		{B363567A-8432-4717-814A-0856DB62122A} = {88EB0423-E057-4F84-AD3E-3BF137836F37}
 		{3E1E1AD7-B76E-4B5E-BAC4-492C4F5C4889} = {328926A4-BBA3-412C-BE8A-5878C88F4032}
 		{3720E401-10A1-462C-833D-283E69B78777} = {2697541A-86D7-48DF-BD66-574E9CB6EB98}
+		{609118D0-E114-4BA7-BCE0-688C8E71EBCF} = {CC706C4E-BDFD-4BA4-8E9E-D51C03AF2497}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{67F26E05-0994-4AE6-8E1F-C988DA462E68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -44,5 +47,9 @@ Global
 		{3720E401-10A1-462C-833D-283E69B78777}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3720E401-10A1-462C-833D-283E69B78777}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3720E401-10A1-462C-833D-283E69B78777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609118D0-E114-4BA7-BCE0-688C8E71EBCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609118D0-E114-4BA7-BCE0-688C8E71EBCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609118D0-E114-4BA7-BCE0-688C8E71EBCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609118D0-E114-4BA7-BCE0-688C8E71EBCF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

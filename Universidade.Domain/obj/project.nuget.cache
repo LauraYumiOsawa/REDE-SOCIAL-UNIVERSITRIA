@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cWtLOSRXRagETzmkPjfrE7KtecDtJoge+2dkwamWIXnK7auVq1Q71tGHHsClQUz32X+mtF84hfbTU3RaJ67Blw==",
+  "dgSpecHash": "68wI/YBJd9U=",
   "success": true,
-  "projectFilePath": "/home/losawa/Músicas/Class/FullStack/2/UniversidadeDDD/Universidade.Domain/Universidade.Domain.csproj",
+  "projectFilePath": "/home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/Universidade.Domain/Universidade.Domain.csproj",
   "expectedPackageFiles": [
     "/home/losawa/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/losawa/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

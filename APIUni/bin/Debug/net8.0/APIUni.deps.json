@@ -9,6 +9,8 @@
       "APIUni/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Mvc": "2.3.0",
+          "Microsoft.EntityFrameworkCore": "9.0.2",
+          "Universidade.Application": "1.0.0",
           "Universidade.Domain": "1.0.0",
           "Universidade.Presentation": "1.0.0"
         },
@@ -1832,6 +1834,16 @@
           "System.Xml.XPath": "4.3.0"
         }
       },
+      "Universidade.Application/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "9.0.2",
+          "Universidade.Domain": "1.0.0",
+          "Universidade.Infra": "1.0.0"
+        },
+        "runtime": {
+          "Universidade.Application.dll": {}
+        }
+      },
       "Universidade.Domain/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.2",
@@ -3224,6 +3236,11 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Universidade.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Universidade.Domain/1.0.0": {
       "type": "project",

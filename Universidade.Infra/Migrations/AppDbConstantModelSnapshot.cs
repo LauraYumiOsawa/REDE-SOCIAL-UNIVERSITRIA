@@ -22,13 +22,26 @@ namespace Universidade.Infra.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("Universidade.Domain.Evento", b =>
+            modelBuilder.Entity("EventoUsuario", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("EventosId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("ParticipantesId")
                         .HasColumnType("int");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+                    b.HasKey("EventosId", "ParticipantesId");
+
+                    b.HasIndex("ParticipantesId");
+
+                    b.ToTable("EventoUsuario");
+                });
+
+            modelBuilder.Entity("Universidade.Domain.Evento", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
 
                     b.Property<DateTime?>("DateTime")
                         .HasColumnType("datetime(6)");
@@ -36,11 +49,18 @@ namespace Universidade.Infra.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
+                    b.Property<int>("LimiteParticipantes")
+                        .HasColumnType("int");
+
                     b.Property<string>("Location")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<bool>("TemLimite")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 
@@ -55,10 +75,7 @@ namespace Universidade.Infra.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<Guid?>("AuthorId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<int?>("AuthorId1")
+                    b.Property<int>("AuthorId")
                         .HasColumnType("int");
 
                     b.Property<string>("Content")
@@ -67,9 +84,12 @@ namespace Universidade.Infra.Migrations
                     b.Property<DateTime?>("DateTime")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<int?>("Likes")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId1");
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Postagens");
                 });
@@ -83,49 +103,85 @@ namespace Universidade.Infra.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Course")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Enrollment")
-                        .HasColumnType("longtext");
-
-                    b.Property<int?>("EventoId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Followers")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EventoId");
-
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("UsuarioFollowers", b =>
+                {
+                    b.Property<int>("FollowerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("FollowingId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FollowerId", "FollowingId");
+
+                    b.HasIndex("FollowingId");
+
+                    b.ToTable("UsuarioFollowers");
+                });
+
+            modelBuilder.Entity("EventoUsuario", b =>
+                {
+                    b.HasOne("Universidade.Domain.Evento", null)
+                        .WithMany()
+                        .HasForeignKey("EventosId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Universidade.Domain.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("ParticipantesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Universidade.Domain.Postagem", b =>
                 {
                     b.HasOne("Universidade.Domain.Usuario", "Author")
-                        .WithMany()
-                        .HasForeignKey("AuthorId1");
+                        .WithMany("Postagens")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Author");
                 });
 
-            modelBuilder.Entity("Universidade.Domain.Usuario", b =>
+            modelBuilder.Entity("UsuarioFollowers", b =>
                 {
-                    b.HasOne("Universidade.Domain.Evento", null)
-                        .WithMany("Participantes")
-                        .HasForeignKey("EventoId");
+                    b.HasOne("Universidade.Domain.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("FollowerId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Universidade.Domain.Usuario", null)
+                        .WithMany()
+                        .HasForeignKey("FollowingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Universidade.Domain.Evento", b =>
+            modelBuilder.Entity("Universidade.Domain.Usuario", b =>
                 {
-                    b.Navigation("Participantes");
+                    b.Navigation("Postagens");
                 });
 #pragma warning restore 612, 618
         }

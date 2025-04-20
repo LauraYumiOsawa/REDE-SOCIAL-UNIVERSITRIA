@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = APIUni
-build_property.ProjectDir = /home/losawa/Músicas/Class/FullStack/2/UniversidadeDDD/APIUni/
+build_property.ProjectDir = /home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/APIUni/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

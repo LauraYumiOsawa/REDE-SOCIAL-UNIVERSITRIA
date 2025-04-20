@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "dgSpecHash": "q1cWrN3OpUw=",
+  "success": true,
+  "projectFilePath": "/home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/Universidade.Application/Universidade.Application.csproj",
+  "expectedPackageFiles": [
+    "/home/losawa/.nuget/packages/microsoft.entityframeworkcore/9.0.2/microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.entityframeworkcore.abstractions/9.0.2/microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.entityframeworkcore.analyzers/9.0.2/microsoft.entityframeworkcore.analyzers.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.entityframeworkcore.relational/9.0.0/microsoft.entityframeworkcore.relational.9.0.0.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.caching.abstractions/9.0.2/microsoft.extensions.caching.abstractions.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.caching.memory/9.0.2/microsoft.extensions.caching.memory.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.0/microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.2/microsoft.extensions.dependencyinjection.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.2/microsoft.extensions.dependencyinjection.abstractions.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.logging/9.0.2/microsoft.extensions.logging.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.logging.abstractions/9.0.2/microsoft.extensions.logging.abstractions.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.options/9.0.2/microsoft.extensions.options.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/microsoft.extensions.primitives/9.0.2/microsoft.extensions.primitives.9.0.2.nupkg.sha512",
+    "/home/losawa/.nuget/packages/mysqlconnector/2.4.0/mysqlconnector.2.4.0.nupkg.sha512",
+    "/home/losawa/.nuget/packages/pomelo.entityframeworkcore.mysql/9.0.0-preview.3.efcore.9.0.0/pomelo.entityframeworkcore.mysql.9.0.0-preview.3.efcore.9.0.0.nupkg.sha512",
+    "/home/losawa/.nuget/packages/system.diagnostics.diagnosticsource/9.0.2/system.diagnostics.diagnosticsource.9.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -10,61 +10,68 @@ namespace Universidade.Api.Controllers
     [ApiController]
     public class EventosController : ControllerBase
     {
-        private readonly IEventoRepository _context;
+        private readonly IEventoRepository _eventoRepository;
 
-        public EventosController(IEventoRepository context)
+        public EventosController(IEventoRepository eventoRepository)
         {
-            _context = context;
+            _eventoRepository = eventoRepository;
         }
 
         // GET: api/Eventos
         [HttpGet]
         public async Task<ActionResult<List<Evento>>> GetEventos()
         {
-            var eventos = await _context.GetAll();
-            return Ok(eventos); // Return 200 OK with the list of users
+            var eventos = await _eventoRepository.GetAll();
+            return Ok(eventos); 
         }
 
-        // GET: api/Eventos/5
+        // GET: api/Eventos/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<Evento>> GetEvento(int id)
         {
-            var evento = await _context.GetById(id);
+            var evento = await _eventoRepository.GetById(id);
 
             if (evento == null)
-            {
-                return NotFound(); // 404 Not Found if user doesn't exist
-            }
+                return NotFound("Evento não encontrado.");
 
-            return Ok(evento); // Return 200 OK with the user
+            return Ok(evento);
         }
 
         // POST: api/Eventos
         [HttpPost]
-        public async Task<ActionResult<Evento>> PostEvento(Evento evento)
+        public async Task<ActionResult<Evento>> PostEvento([FromBody] Evento evento)
         {
-            var isAdded = await _context.Add(evento);
+            var isAdded = await _eventoRepository.Add(evento);
 
             if (!isAdded)
-            {
-                return BadRequest("Erro ao adicionar o usuário."); // 400 Bad Request
-            }
+                return BadRequest("Erro ao adicionar o evento.");
 
-            return CreatedAtAction(nameof(GetEvento), new { id = evento.Id }, evento); // 201 Created
+            return CreatedAtAction(nameof(GetEvento), new { id = evento.Id }, evento);
+        }
+        
+        // POST: api/eventos/{eventoId}/inscrever/{usuarioId}
+        [HttpPost("{eventoId}/inscrever/{usuarioId}")]
+        public async Task<IActionResult> InscreverUsuario(Guid eventoId, int usuarioId)
+        {
+            var sucesso = await _eventoRepository.InscreverUsuario(eventoId, usuarioId);
+
+            if (!sucesso)
+                return BadRequest("Não foi possível inscrever o usuário. Verifique se ele já está inscrito ou se o evento está cheio.");
+
+            return Ok("Usuário inscrito com sucesso.");
         }
 
-        // DELETE: api/Eventos/5
+
+        // DELETE: api/Eventos/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteEvento(int id)
         {
-            var isDeleted = await _context.Delete(id);
+            var isDeleted = await _eventoRepository.Delete(id);
 
-            if (isDeleted)
-            {
-                return Ok("Usuário deletado com sucesso."); // 200 OK
-            }
+            if (!isDeleted)
+                return NotFound("Evento não encontrado.");
 
-            return NotFound("Id não encontrado."); // 404 Not Found
+            return Ok("Evento deletado com sucesso.");
         }
     }
 }

@@ -2919,11 +2919,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/losawa/Músicas/Class/FullStack/2/UniversidadeDDD/Universidade.Domain/Universidade.Domain.csproj",
+      "projectUniqueName": "/home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/Universidade.Domain/Universidade.Domain.csproj",
       "projectName": "Universidade.Domain",
-      "projectPath": "/home/losawa/Músicas/Class/FullStack/2/UniversidadeDDD/Universidade.Domain/Universidade.Domain.csproj",
+      "projectPath": "/home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/Universidade.Domain/Universidade.Domain.csproj",
       "packagesPath": "/home/losawa/.nuget/packages/",
-      "outputPath": "/home/losawa/Músicas/Class/FullStack/2/UniversidadeDDD/Universidade.Domain/obj/",
+      "outputPath": "/home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/Universidade.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/losawa/.nuget/NuGet/NuGet.Config"
@@ -2981,7 +2981,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.115/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

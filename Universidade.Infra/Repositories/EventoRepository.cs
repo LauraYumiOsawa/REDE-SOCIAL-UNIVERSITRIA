@@ -14,6 +14,46 @@ public class EventoRepository : IEventoRepository
         _context = context;
     }
     
+    public async Task SalvarAsync()
+    {
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<bool> InscreverUsuario(Guid eventoId, int usuarioId)
+    {
+        var evento = await _context.Eventos
+            .Include(e => e.Participantes)
+            .FirstOrDefaultAsync(e => e.Id == eventoId);
+
+        if (evento == null)
+            return false;
+
+        var usuario = await _context.Usuarios.FindAsync(usuarioId);
+        if (usuario == null)
+            return false;
+
+        if (evento.Participantes.Any(p => p.Id == usuarioId))
+            return false;
+
+        if (evento.TemLimite && evento.Participantes.Count >= evento.LimiteParticipantes)
+            return false;
+
+        evento.Participantes.Add(usuario);
+        _context.Eventos.Update(evento);
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
+
+    
+    public async Task<Evento?> ObterPorIdComParticipantesAsync(Guid eventoId)
+    {
+        return await _context.Eventos
+            .Include(e => e.Participantes)
+            .FirstOrDefaultAsync(e => e.Id == eventoId);
+    }
+
+    
     public async Task<List<Evento>> GetAll()
     {
         return await _context.Eventos.ToListAsync();
@@ -29,7 +69,7 @@ public class EventoRepository : IEventoRepository
         var eventoExistente = await _context.Eventos.FindAsync(id);
         if (eventoExistente == null) return false;
 
-        eventoExistente.Name = evento.Name;
+        eventoExistente.Nome = evento.Nome;
         eventoExistente.Location = evento.Location;
         eventoExistente.Description = evento.Description;
         eventoExistente.DateTime = evento.DateTime;

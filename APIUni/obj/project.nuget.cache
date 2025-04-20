@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lF9jZqUQkpU=",
+  "dgSpecHash": "x+zFjwhfpus=",
   "success": true,
-  "projectFilePath": "/home/losawa/Músicas/Class/FullStack/2/UniversidadeDDD/APIUni/APIUni.csproj",
+  "projectFilePath": "/home/losawa/Músicas/Class/FullStack/estouemsantos/REDE-SOCIAL-UNIVERSITRIA/APIUni/APIUni.csproj",
   "expectedPackageFiles": [
     "/home/losawa/.nuget/packages/microsoft.aspnetcore/2.3.0/microsoft.aspnetcore.2.3.0.nupkg.sha512",
     "/home/losawa/.nuget/packages/microsoft.aspnetcore.antiforgery/2.3.0/microsoft.aspnetcore.antiforgery.2.3.0.nupkg.sha512",
